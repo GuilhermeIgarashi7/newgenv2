@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --fundo: #120d1d;
+  --cabecalho: #191129;
+  --card: #211738;
+  --card-borda: #3a2961;
+  --campo: #2a1e47;
+  --texto: #f6f3ff;
+  --texto-suave: #b5a4d9;
+  --roxo: #7c3aed;
+  --roxo-hover: #8b5cf6;
+  --roxo-claro: #d8b4fe;
+  --roxo-destaque: #c084fc;
+  --vermelho: #9f1239;
+  --vermelho-claro: #fb7185;
+  --amarelo: #fbbf24;
+  --botao-secundario: #38285c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Badges de status no tema roxo NewGenST */
+.badge-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-ok {
+  color: var(--roxo-claro);
+  background: rgba(124, 58, 237, 0.25);
+  border-color: rgba(192, 132, 252, 0.45);
+}
+
+.badge-baixo {
+  color: var(--amarelo);
+  background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.38);
+}
+
+.badge-critico {
+  color: var(--vermelho-claro);
+  background: rgba(251, 113, 133, 0.14);
+  border-color: rgba(251, 113, 133, 0.38);
+}
+
+/* Campos de formulário estilo NewGenST */
+.campo-estoque {
+  background: var(--campo);
+  border: 1px solid var(--card-borda);
+  border-radius: 10px;
+  padding: 11px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.campo-estoque:focus-within {
+  border-color: var(--roxo-destaque);
+  box-shadow: 0 0 0 1px var(--roxo-destaque);
+}
+
+.campo-estoque input,
+.campo-estoque select,
+.campo-estoque textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--texto);
+  font-size: 0.96rem;
+}
+
+.campo-estoque input::placeholder,
+.campo-estoque textarea::placeholder {
+  color: rgba(181, 164, 217, 0.65);
+}
+
+.campo-estoque select option {
+  background: var(--campo);
+  color: var(--texto);
+}
+
+/* Toggle switch roxo */
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #3d2c63;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: var(--roxo);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(22px);
+}
+
+/* Scrollbar temática roxa */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #120d1d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a2961;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #533a8a;
+}
