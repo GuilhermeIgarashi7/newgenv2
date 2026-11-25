@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "newgenst",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-04",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "build": {
+    "command": "node -e \"if(!require('fs').existsSync('node_modules/next')) require('child_process').execSync('npm install --no-audit --no-fund',{stdio:'inherit'})\" && npx opennextjs-cloudflare build --openNextConfigPath=config/open-next.config.ts"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
